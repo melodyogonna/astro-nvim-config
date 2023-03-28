@@ -1,18 +1,12 @@
 return {
   -- Wakatime
-  { "wakatime/vim-wakatime" },
+  { "wakatime/vim-wakatime", lazy = false },
 
   -- vim test
-  { "vim-test/vim-test" },
-
-  -- Treesitter text object
-  { "nvim-treesitter/nvim-treesitter-textobjects" },
+  { "vim-test/vim-test", lazy = false },
 
   -- Color scheme
   { "christianchiarulli/nvcode-color-schemes.vim" },
-
-  -- Vim sandwich
-  { "machakann/vim-sandwich" },
 
   -- Fox themes
   { "EdenEast/nightfox.nvim" },
@@ -30,21 +24,37 @@ return {
               workspaces = {
                 work = "~/Documents/notes/work",
                 personal = "~/Documents/notes/personal",
-              }
-            }
+              },
+            },
           },
           ["core.norg.concealer"] = {},
           ["core.norg.completion"] = {
             config = {
-              engine = "nvim-cmp"
-            }
-          }
-        }
+              engine = "nvim-cmp",
+            },
+          },
+        },
       }
-      astronvim.add_cmp_source({ name = "neorg", priority = 1000 })
+      astronvim.add_cmp_source { name = "neorg", priority = 1000 }
     end,
   },
-  { "tpope/vim-fugitive" },
-  { "fatih/vim-go" },
-  { "rust-lang/rust.vim" }
+  { "tpope/vim-fugitive", cmd = "G" },
+  { "fatih/vim-go", ft = "go" },
+  { "simrat39/rust-tools.nvim" },
+  {
+    "williamboman/mason-lspconfig.nvim",
+    opts = {
+      ensure_installed = { "rust_analyzer" },
+    },
+  },
+  {
+    "kylechui/nvim-surround",
+    version = "*", -- Use for stability; omit to use `main` branch for the latest features
+    event = "VeryLazy",
+    config = function()
+      require("nvim-surround").setup {
+        -- Configuration here, or leave empty to use defaults
+      }
+    end,
+  },
 }

@@ -1,4 +1,8 @@
 return {
+  "nvim-treesitter/nvim-treesitter",
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+  },
   ensure_installed = {
     "python",
     "javascript",
@@ -9,7 +13,7 @@ return {
     "vue",
     "json",
     "go",
-    "rust"
+    "rust",
   },
   textobjects = {
     select = {

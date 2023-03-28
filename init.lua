@@ -49,6 +49,7 @@ local config = {
                         wrap = false, -- sets vim.opt.wrap
                         swapfile = false,
                         undodir = os.getenv "HOME" .. "/.nvim/undodir/",
+                        showtabline = 0,
                 },
                 g = {
                         mapleader = " ", -- sets vim.g.mapleader
@@ -85,51 +86,6 @@ local config = {
                 "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
                 "    ██   ████   ████   ██ ██      ██",
         },
-
-        -- Default theme configuration
-        default_theme = {
-                -- Modify the color palette for the default theme
-                colors = {
-                        fg = "#abb2bf",
-                        bg = "#1e222a",
-                },
-                highlights = function(hl) -- or a function that returns a new table of colors to set
-                        local C = require "default_theme.colors"
-
-                        hl.Normal = { fg = C.fg, bg = C.bg }
-
-                        -- New approach instead of diagnostic_style
-                        hl.DiagnosticError.italic = true
-                        hl.DiagnosticHint.italic = true
-                        hl.DiagnosticInfo.italic = true
-                        hl.DiagnosticWarn.italic = true
-
-                        return hl
-                end,
-                -- enable or disable highlighting for extra plugins
-                plugins = {
-                        aerial = true,
-                        beacon = false,
-                        bufferline = true,
-                        cmp = true,
-                        dashboard = false,
-                        highlighturl = true,
-                        hop = false,
-                        indent_blankline = true,
-                        lightspeed = false,
-                        ["neo-tree"] = true,
-                        notify = true,
-                        ["nvim-tree"] = false,
-                        ["nvim-web-devicons"] = true,
-                        rainbow = true,
-                        symbols_outline = false,
-                        telescope = true,
-                        treesitter = true,
-                        vimwiki = false,
-                        ["which-key"] = true,
-                },
-        },
-
         -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
         diagnostics = {
                 virtual_text = true,
@@ -170,27 +126,11 @@ local config = {
                 -- add to the global LSP on_attach function
                 -- on_attach = function(client, bufnr)
                 -- end,
-
-                -- override the mason server-registration function
-                -- server_registration = function(server, opts)
-                --   require("lspconfig")[server].setup(opts)
-                -- end,
-
-                -- Add overrides for LSP server settings, the keys are the name of the server
-                ["server-settings"] = {
-                        -- example for addings schemas to yamlls
-                        -- yamlls = { -- override table for require("lspconfig").yamlls.setup({...})
-                        --   settings = {
-                        --     yaml = {
-                        --       schemas = {
-                        --         ["http://json.schemastore.org/github-workflow"] = ".github/workflows/*.{yml,yaml}",
-                        --         ["http://json.schemastore.org/github-action"] = ".github/action.{yml,yaml}",
-                        --         ["http://json.schemastore.org/ansible-stable-2.9"] = "roles/tasks/*.{yml,yaml}",
-                        --       },
-                        --     },
-                        --   },
-                        -- },
+                setup_handlers = {
+                -- add custom handler
+                        rust_analyzer = function(_, opts) require("rust-tools").setup { server = opts } end
                 },
+
         },
 
         -- Mapping data with "desc" stored directly by vim.keymap.set().
