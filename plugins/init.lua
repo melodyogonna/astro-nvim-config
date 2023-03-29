@@ -1,19 +1,14 @@
 return {
   -- Wakatime
-  { "wakatime/vim-wakatime", lazy = false },
-
+  { "wakatime/vim-wakatime",  lazy = false },
   -- vim test
-  { "vim-test/vim-test", lazy = false },
-
-  -- Color scheme
-  { "christianchiarulli/nvcode-color-schemes.vim" },
-
+  { "vim-test/vim-test",      lazy = false },
   -- Fox themes
-  { "EdenEast/nightfox.nvim" },
-
+  { "EdenEast/nightfox.nvim", event = "User AstroFile" },
   -- Neorg
   ["nvim-neorg/neorg"] = {
     run = ":Neorg sync-parsers", -- This is the important bit!
+    event = "User AstroFile",
     config = function()
       require("neorg").setup {
         -- configuration here
@@ -38,8 +33,8 @@ return {
       astronvim.add_cmp_source { name = "neorg", priority = 1000 }
     end,
   },
-  { "tpope/vim-fugitive", cmd = "G" },
-  { "fatih/vim-go", ft = "go" },
+  { "tpope/vim-fugitive",      cmd = "G" },
+  { "fatih/vim-go",            ft = "go" },
   { "simrat39/rust-tools.nvim" },
   {
     "williamboman/mason-lspconfig.nvim",
