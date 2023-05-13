@@ -12,8 +12,7 @@ return {
     ["<C-b>"] = { "<cmd>Neotree toggle<cr>", desc = "Toggle Explorer" },
     ["<leader>o"] = { "<cmd>Neotree focus<cr>", desc = "Focus Explorer" },
     ["<leader>x"] = { "<cmd>close<cr>", desc = "Close buffer" },
-    ["<leader>cr"] = { "<cmd>Crun<cr>", desc = "Cargo run" },
-    ["<leader>ct"] = { "<cmd>Ctest<cr>", desc = "Cargo test" },
+    ["<leader>cr"] = { "<cmd>RustRunnables<cr>", desc = "Rust runnables" },
     ["<localleader>n"] = { "<cmd>Neorg<cr>", desc = "Open Neorg Telescope" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
