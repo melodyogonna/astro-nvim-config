@@ -49,7 +49,7 @@ return {
         -- mapping query_strings to modes.
         selection_modes = {
           ["@parameter.outer"] = "v", -- charwise
-          ["@function.outer"] = "V", -- linewise
+          ["@function.outer"] = "V",  -- linewise
           ["@class.outer"] = "<c-v>", -- blockwise
         },
         -- If you set this to `true` (default is `false`) then any textobject is
@@ -112,6 +112,21 @@ return {
           ["<leader>dF"] = "@class.outer",
         },
       },
+    },
+    incremental_selection = {
+      enable = true,
+      keymaps = {
+        init_selection = "<leader>s", -- set to `false` to disable one of the mappings
+        scope_incremental = "<CR>",
+        node_incremental = "<TAB>",
+        node_decremental = "<S-TAB>",
+      },
+    },
+    indent = {
+      enable = true,
+    },
+    highlight = {
+      enable = true,
     },
   },
 }
