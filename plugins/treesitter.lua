@@ -49,7 +49,7 @@ return {
         -- mapping query_strings to modes.
         selection_modes = {
           ["@parameter.outer"] = "v", -- charwise
-          ["@function.outer"] = "V",  -- linewise
+          ["@function.outer"] = "V", -- linewise
           ["@class.outer"] = "<c-v>", -- blockwise
         },
         -- If you set this to `true` (default is `false`) then any textobject is
@@ -86,6 +86,7 @@ return {
         goto_previous_start = {
           ["[f"] = "@function.outer",
           ["[c"] = "@class.outer",
+          ["[s"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
         },
         goto_previous_end = {
           ["[F"] = "@function.outer",
@@ -110,6 +111,15 @@ return {
         peek_definition_code = {
           ["<leader>df"] = "@function.outer",
           ["<leader>dF"] = "@class.outer",
+        },
+      },
+      swap = {
+        enable = true,
+        swap_next = {
+          ["<leader>a"] = "@parameter.inner",
+        },
+        swap_previous = {
+          ["<leader>A"] = "@parameter.inner",
         },
       },
     },
