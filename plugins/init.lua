@@ -5,34 +5,6 @@ return {
   { "vim-test/vim-test", lazy = false },
   -- Fox themes
   { "EdenEast/nightfox.nvim", event = "User AstroFile" },
-  -- Neorg
-  {
-    "nvim-neorg/neorg",
-    build = ":Neorg sync-parsers", -- This is the important bit!
-    cmd = "Neorg",
-    config = function()
-      require("neorg").setup {
-        -- configuration here
-        load = {
-          ["core.defaults"] = {},
-          ["core.dirman"] = {
-            config = {
-              workspaces = {
-                work = "~/Documents/notes/work",
-                personal = "~/Documents/notes/personal",
-              },
-            },
-          },
-          ["core.concealer"] = {},
-          ["core.completion"] = {
-            config = {
-              engine = "nvim-cmp",
-            },
-          },
-        },
-      }
-    end,
-  },
   { "tpope/vim-fugitive", cmd = "G" },
   { "simrat39/rust-tools.nvim" },
   {

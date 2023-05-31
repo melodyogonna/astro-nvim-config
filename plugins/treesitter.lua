@@ -49,7 +49,7 @@ return {
         -- mapping query_strings to modes.
         selection_modes = {
           ["@parameter.outer"] = "v", -- charwise
-          ["@function.outer"] = "V", -- linewise
+          ["@function.outer"] = "V",  -- linewise
           ["@class.outer"] = "<c-v>", -- blockwise
         },
         -- If you set this to `true` (default is `false`) then any textobject is
@@ -109,8 +109,8 @@ return {
         border = "none",
         floating_preview_opts = {},
         peek_definition_code = {
-          ["<leader>df"] = "@function.outer",
-          ["<leader>dF"] = "@class.outer",
+          ["tf"] = "@function.outer",
+          ["tc"] = "@class.outer",
         },
       },
       swap = {
