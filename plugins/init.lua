@@ -1,8 +1,8 @@
 return {
   -- Wakatime
-  { "wakatime/vim-wakatime", lazy = false },
+  { "wakatime/vim-wakatime", event = "VeryLazy" },
   -- vim test
-  { "vim-test/vim-test", lazy = false },
+  { "vim-test/vim-test", event = "VeryLazy" },
   -- Fox themes
   { "EdenEast/nightfox.nvim", event = "User AstroFile" },
   { "tpope/vim-fugitive", cmd = "G" },
@@ -22,11 +22,6 @@ return {
         -- Configuration here, or leave empty to use defaults
       }
     end,
-  },
-  {
-    "github/copilot.vim",
-    event = "VeryLazy",
-    enabled = false,
   },
   {
     "amadeus/vim-mjml",

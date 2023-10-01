@@ -17,6 +17,8 @@ return {
           name = "Launch file",
           program = "${file}",
           stopOnEntry = true,
+          sourceMaps = true,
+          skipFiles = { "<node_internals>/**" },
           cwd = "${workspaceFolder}",
         },
         {
