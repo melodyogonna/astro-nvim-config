@@ -9,8 +9,8 @@ return {
     -- modify the sources part of the options table
     opts.sources = cmp.config.sources {
       { name = "nvim_lsp", priority = 1500 },
-      { name = "luasnip", priority = 750 },
-      { name = "buffer", priority = 700 },
+      { name = "luasnip", priority = 700 },
+      { name = "buffer", priority = 500 },
     }
 
     -- return the new table to be used
