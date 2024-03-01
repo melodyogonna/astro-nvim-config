@@ -87,6 +87,7 @@ local config = {
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
+      "sourcekit"
     },
     formatting = {
       -- control auto formatting on save
