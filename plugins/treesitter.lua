@@ -35,12 +35,12 @@ return {
           ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
 
           -- Inner if - For conditionals
-          ["ii"] = "@conditional.inner",
-          ["ai"] = "@conditional.outer",
+          ["ii"] = {query = "@conditional.inner", desc = "Select inner conditional - inner if"},
+          ["ai"] = {query = "@conditional.outer", desc = "Select outer conditional - outer if"},
 
           -- Loop
-          ["il"] = "@loop.inner",
-          ["al"] = "@loop.outer",
+          ["il"] = {query = "@loop.inner", desc = "Select inner loop"},
+          ["al"] = {query = "@loop.outer", desc="Select outer loop"},
         },
         -- You can choose the select mode (default is charwise 'v')
         --
@@ -69,7 +69,7 @@ return {
         enable = true,
         set_jumps = true, -- whether to set jumps in the jumplist
         goto_next_start = {
-          ["]f"] = "@function.outer",
+          ["]f"] = { query =  "@function.outer", desc="Next function start"},
           ["]c"] = { query = "@class.outer", desc = "Next class start" },
           --
           -- You can use regex matching (i.e. lua pattern) and/or pass a list in a "query" key to group multiple queires.
@@ -82,28 +82,27 @@ return {
           ["]z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
         },
         goto_next_end = {
-          ["]F"] = "@function.outer",
-          ["]C"] = "@class.outer",
+          ["]F"] = { query =  "@function.outer", desc="Next function end"},
+          ["]C"] = { query =  "@class.outer", desc="Next class end"},
         },
         goto_previous_start = {
-          ["[f"] = "@function.outer",
-          ["[c"] = "@class.outer",
-          ["[s"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
+          ["[f"] = { query =  "@function.outer", desc="Previous function start"},
+          ["[c"] = {query =  "@class.outer", desc = "Previous class start"},
         },
         goto_previous_end = {
-          ["[F"] = "@function.outer",
-          ["[C"] = "@class.outer",
+          ["[F"] = { query =  "@function.outer", desc = "Previous function end"},
+          ["[C"] = { query =  "@class.outer", desc ="Previous class end"},
         },
         -- Below will go to either the start or the end, whichever is closer.
         -- Use if you want more granular movements
         -- Make it even more gradual by adding multiple queries and regex.
         goto_next = {
-          ["]i"] = "@conditional.outer",
-          ["]l"] = "@loop.outer",
+          ["]i"] = {query =  "@conditional.outer", desc = "Next conditional (if statement)"},
+          ["]l"] = {query =  "@loop.outer", desc = "Next loop"},
         },
         goto_previous = {
-          ["[i"] = "@conditional.outer",
-          ["[l"] = "@loop.outer",
+          ["[i"] = {query =  "@conditional.outer", desc="Previous conditional (If statement)"},
+          ["[l"] = {query =  "@loop.outer", desc="Previous loop"},
         },
       },
       lsp_interop = {
@@ -111,17 +110,17 @@ return {
         border = "none",
         floating_preview_opts = {},
         peek_definition_code = {
-          ["tf"] = "@function.outer",
-          ["tc"] = "@class.outer",
+          ["tf"] = {query =  "@function.outer", desc="Peek function function"},
+          ["tc"] = { query =  "@class.outer", desc = "Peak class (object) definition"},
         },
       },
       swap = {
         enable = true,
         swap_next = {
-          ["<leader>a"] = "@parameter.inner",
+          ["<leader>]p"] = {query =  "@parameter.inner", desc="Swap parameter with next"},
         },
         swap_previous = {
-          ["<leader>A"] = "@parameter.inner",
+          ["<leader>[p"] = {query= "@parameter.inner", desc="Swap parameter with Previous"},
         },
       },
     },
