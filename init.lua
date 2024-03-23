@@ -24,9 +24,6 @@ local config = {
     -- },
   },
 
-  -- Set colorscheme to use
-  colorscheme = "default_theme",
-
   -- Add highlight groups in any theme
   highlights = {
     -- init = { -- this table overrides highlights in all themes

@@ -42,5 +42,8 @@ return {
   {
     "tpope/vim-dispatch",
     event = "VeryLazy"
-  }
+  },
+  {"max397574/better-escape.nvim", enabled=false},
+  {"rcarriga/nvim-notify", enabled=false},
+  {"Shatur/neovim-session-manager", enabled=false}
 }
