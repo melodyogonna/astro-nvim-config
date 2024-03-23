@@ -30,4 +30,7 @@ return {
     -- ["<esc>"] = false,
     ["<C-o>"] = { "<C-\\><C-n>", desc = "Normal mode term" },
   },
+  v = {
+    ['<leader>fc'] = {function() require("telescope.builtin").grep_string() end, desc="Search selection under cursor"}
+  }
 }

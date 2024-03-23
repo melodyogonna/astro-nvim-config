@@ -13,6 +13,10 @@ return {
       { name = "buffer", priority = 500 },
     }
 
+    opts.history = true
+	  opts.region_check_events = "InsertEnter"
+	  opts.delete_check_events = "TextChanged,InsertLeave"
+
     -- return the new table to be used
     return opts
   end,

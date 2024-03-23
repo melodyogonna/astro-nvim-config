@@ -10,7 +10,9 @@ return {
       "lua",
       "typescript",
       "html",
+      "htmldjango",
       "css",
+      "scss",
       "vue",
       "json",
       "go",
@@ -18,6 +20,7 @@ return {
       "markdown",
       "c",
       "zig",
+      "swift"
     },
     textobjects = {
       select = {
@@ -116,12 +119,6 @@ return {
       },
       swap = {
         enable = true,
-        swap_next = {
-          ["<leader>]p"] = {query =  "@parameter.inner", desc="Swap parameter with next"},
-        },
-        swap_previous = {
-          ["<leader>[p"] = {query= "@parameter.inner", desc="Swap parameter with Previous"},
-        },
       },
     },
     incremental_selection = {
