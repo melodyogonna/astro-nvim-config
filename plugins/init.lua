@@ -17,11 +17,7 @@ return {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
     event = "VeryLazy",
-    config = function()
-        require("nvim-surround").setup({
-            -- Configuration here, or leave empty to use defaults
-        })
-    end
+    config = function() require("nvim-surround").setup {} end,
   },
   {
     "amadeus/vim-mjml",
@@ -41,9 +37,9 @@ return {
   },
   {
     "tpope/vim-dispatch",
-    event = "VeryLazy"
+    event = "VeryLazy",
   },
-  {"max397574/better-escape.nvim", enabled=false},
-  {"rcarriga/nvim-notify", enabled=false},
-  {"Shatur/neovim-session-manager", enabled=false}
+  { "max397574/better-escape.nvim", enabled = false },
+  { "rcarriga/nvim-notify", enabled = false },
+  { "Shatur/neovim-session-manager", enabled = false },
 }
