@@ -5,6 +5,9 @@ return {
   { "vim-test/vim-test", event = "VeryLazy" },
   -- Fox themes
   { "EdenEast/nightfox.nvim", event = "User AstroFile" },
+  { "folke/tokyonight.nvim", event = "User AstroFile" },
+  { "rebelot/kanagawa.nvim", event = "User AstroFile" },
+
   { "tpope/vim-fugitive", cmd = "G" },
   { "simrat39/rust-tools.nvim", ft = "rust" },
   {
@@ -39,6 +42,7 @@ return {
     "tpope/vim-dispatch",
     event = "VeryLazy",
   },
+
   { "max397574/better-escape.nvim", enabled = false },
   { "rcarriga/nvim-notify", enabled = false },
   { "Shatur/neovim-session-manager", enabled = false },

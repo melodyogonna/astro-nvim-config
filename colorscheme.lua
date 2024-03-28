@@ -1,1 +1,1 @@
-return "terafox"
+return "tokyonight-night"

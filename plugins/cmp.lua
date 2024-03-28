@@ -8,14 +8,15 @@ return {
     local cmp = require "cmp"
     -- modify the sources part of the options table
     opts.sources = cmp.config.sources {
-      { name = "nvim_lsp", priority = 1500 },
+      { name = "nvim_lsp", priority = 1000 },
       { name = "luasnip", priority = 700 },
       { name = "buffer", priority = 500 },
+      { name = "path", priority = 250 },
     }
 
     opts.history = true
-	  opts.region_check_events = "InsertEnter"
-	  opts.delete_check_events = "TextChanged,InsertLeave"
+    opts.region_check_events = "InsertEnter"
+    opts.delete_check_events = "TextChanged,InsertLeave"
 
     -- return the new table to be used
     return opts
