@@ -74,6 +74,10 @@ local config = {
         opts.root_dir = require("lspconfig.util").root_pattern "package.json"
         return opts
       end,
+      sourcekit = function(opts)
+        opts.filetypes = { "swift" }
+        return opts
+      end,
     },
     formatting = {
       -- control auto formatting on save
@@ -92,16 +96,6 @@ local config = {
     setup_handlers = {
       -- add custom handler
       rust_analyzer = function(_, opts) require("rust-tools").setup { server = opts } end,
-    },
-  },
-
-  -- LuaSnip Options
-  luasnip = {
-    -- Add paths for including more VS Code style snippets in luasnip
-    vscode_snippet_paths = {},
-    -- Extend filetypes
-    filetype_extend = {
-      -- javascript = { "javascriptreact" },
     },
   },
 

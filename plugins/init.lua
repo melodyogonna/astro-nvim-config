@@ -9,6 +9,12 @@ return {
   { "rebelot/kanagawa.nvim", event = "User AstroFile" },
 
   { "tpope/vim-fugitive", cmd = "G" },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      inlay_hints = { enabled = true },
+    },
+  },
   { "simrat39/rust-tools.nvim", ft = "rust" },
   {
     "williamboman/mason-lspconfig.nvim",
